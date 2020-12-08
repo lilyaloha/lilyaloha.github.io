@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+/* reset
+--------------------------------- */
+html,body,h1,h2,h3,h4,p,ul,li,a {
+  margin: 0;
+  padding: 0;
+  line-height: 1.0;
+}
+
+ul,li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  /* max-width: 100%; */
+  border: 0; /*ブラウザによってborderがついてしまうため*/
+  vertical-align: bottom;
+}
+
+/*PCファースト
+--------------------------------- */
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+h1 {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+  background: url(../img/logo.svg) no-repeat center center/contain;
+  text-indent:100%; /*横に持ってくる。改行される*/
+  white-space: nowrap;/*white-spaceは文字の横並びの指定*/
+  overflow: hidden;
+}/*はみ出ないようにするには、contain。ロゴは常にcontain*/
+
+/*   padding: 20px 0;
+  width: 72px; 
+  margin: 0 auto;幅の指定をしてあるものはtext-align: centerで真ん中に来なくなる。margin  0 autoで真ん中に持ってくる*/
+
+
+header>p {
+  font-family: 'Kosugi', sans-serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.g-nav {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to bottom, #0cc01b, #5fbe6f);
+}
+
+.g-nav>ul {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.g-nav li {
+  width: 25%;
+}
+
+.g-nav a {
+  display: block;
+  line-height: 50px; /*headerでtext-align:centerにしているので、垂直方向にセンターにする*/
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+
+.g-nav li:first-of-type {
+  border-left: 1px solid #fff;
+}
+.g-nav a:hover {
+  background-color:rgb(10, 128, 45);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container img {
+  max-width: 100%;
+}
+
+.main {
+  width: 65%; /*space-betweenによって、真ん中に空きができる*/
+}
+
+.main>h2 {
+  margin-bottom: 10px;
+  font-size: 30px
+}
+
+.main-txt {
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.main h3 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.food {
+  margin-bottom: 50px;
+}
+
+.food-txt {
+  line-height: 1.8;
+}
+
+.main h4 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  border-left:10px solid #0cc01b;
+  padding-left: 16px;
+}
+
+.food-photo {
+  margin-bottom: 10px;
+}
+
+.aside {
+  width: 30%;
+}
+
+.aside>h2 {
+  margin-bottom: 10px;
+}
+
+.aside-photo {
+  margin-bottom: 10px;
+}
+
+.aside-txt {
+  line-height: 1.8;
+}
+
+footer{
+  height: 100px;
+  background: linear-gradient(to bottom, #c0300c, #da5533);
+}
+
+footer p {
+  line-height: 100px;
+  text-align: center;
+  color: #fff;
+}
+
+
+@media (max-width:959px) {
+  .container{
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .aside {
+    width: 33%;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    width: 60px;
+    height: 60px;
+  }
+
+  header>p {
+    font-size: 24px;
+  }
+
+  .g-nav li:first-of-type {
+    border-left: 0;
+  }
+
+  .g-nav li:last-of-type {
+    border-right: 0;
+  }
+  
+  .container {
+    display: block;
+  }
+
+  .main {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+
+  .aside {
+    width: 100%;
+  }
+
+}
